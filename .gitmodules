@@ -1,0 +1,3 @@
+[submodule "patient-management-system-shared-models"]
+	path = patient-management-system-shared-models
+	url = https://github.com/omjdreams/patient-management-system-shared-models.git
