@@ -1,5 +1,5 @@
-const Payment = require("../../leadx-shared-models/models/payment");
-const CouponModel = require("../../leadx-shared-models/models/coupon");
+const Payment = require("../../patient-management-system-shared-models/models/payment");
+const CouponModel = require("../../patient-management-system-shared-models/models/coupon");
 const {
   parseFilters,
   createError,
@@ -7,16 +7,16 @@ const {
   applyQueryOptions,
   checkRequired,
   bulkDelete,
-} = require("../../leadx-shared-models/utils/utils");
-const Subscription = require("../../leadx-shared-models/models/subscription");
-const SeatsPaymentHistory = require("../../leadx-shared-models/models/seatsPaymentHistory");
+} = require("../../patient-management-system-shared-models/utils/utils");
+const Subscription = require("../../patient-management-system-shared-models/models/subscription");
+const SeatsPaymentHistory = require("../../patient-management-system-shared-models/models/seatsPaymentHistory");
 const { default: mongoose } = require("mongoose");
 const {
   paymentSuccessInvoiceEmail,
-} = require("../../leadx-shared-models/utils/helper");
+} = require("../../patient-management-system-shared-models/utils/helper");
 const {
   applySeatManagementChange,
-} = require("../../leadx-shared-models/utils/subscriptionLifecycle");
+} = require("../../patient-management-system-shared-models/utils/subscriptionLifecycle");
 
 // Get All Payment
 const getAllPayment = async (req, res, next) => {

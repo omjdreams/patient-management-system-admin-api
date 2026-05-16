@@ -1,6 +1,8 @@
 const jwt = require("jsonwebtoken");
-const { createError } = require("../leadx-shared-models/utils/utils");
-const AdminModel = require("../leadx-shared-models/models/admin");
+const {
+  createError,
+} = require("../patient-management-system-shared-models/utils/utils");
+const AdminModel = require("../patient-management-system-shared-models/models/admin");
 
 const authenticate = async (req, res, next) => {
   try {

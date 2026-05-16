@@ -4,9 +4,9 @@ const {
   findInstagramAppById,
   updateInstagramApp,
   deleteInstagramApps,
-} = require("../../leadx-shared-models/apps/instagram");
-const InstagramApp = require("../../leadx-shared-models/apps/instagram/models/instagramApp");
-const AppModel = require("../../leadx-shared-models/models/app");
+} = require("../../patient-management-system-shared-models/apps/instagram");
+const InstagramApp = require("../../patient-management-system-shared-models/apps/instagram/models/instagramApp");
+const AppModel = require("../../patient-management-system-shared-models/models/app");
 const {
   parseFilters,
   createError,
@@ -14,7 +14,7 @@ const {
   applyQueryOptions,
   checkRequired,
   bulkDelete,
-} = require("../../leadx-shared-models/utils/utils");
+} = require("../../patient-management-system-shared-models/utils/utils");
 const { randomBytes } = require("node:crypto");
 
 // Create Instagram App Configuration

@@ -1,7 +1,9 @@
-const countries = require("../../leadx-shared-models/constants/country.json");
-const states = require("../../leadx-shared-models/constants/state.json");
-const cities = require("../../leadx-shared-models/constants/city.json");
-const { sendResponse } = require("../../leadx-shared-models/utils/utils");
+const countries = require("../../patient-management-system-shared-models/constants/country.json");
+const states = require("../../patient-management-system-shared-models/constants/state.json");
+const cities = require("../../patient-management-system-shared-models/constants/city.json");
+const {
+  sendResponse,
+} = require("../../patient-management-system-shared-models/utils/utils");
 
 const countryStateCityHandler = async (req, res, next) => {
   try {
@@ -17,7 +19,6 @@ const countryStateCityHandler = async (req, res, next) => {
       result = states.filter((s) => s.countryCode === selectedCountry.isoCode);
     }
     sendResponse(res, result);
-    
   } catch (err) {
     next(err);
   }

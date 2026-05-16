@@ -1,14 +1,16 @@
 const fs = require("fs");
 const path = require("path");
-const { SettingModel } = require("../../leadx-shared-models/models/setting");
-const countries = require("../../leadx-shared-models/constants/country.json");
+const {
+  SettingModel,
+} = require("../../patient-management-system-shared-models/models/setting");
+const countries = require("../../patient-management-system-shared-models/constants/country.json");
 // MaxMind database reader
 let mmdb;
 try {
   mmdb = require("mmdb.js");
 } catch (error) {
   console.warn(
-    "mmdb.js not installed. Geolocation service will not work until installed."
+    "mmdb.js not installed. Geolocation service will not work until installed.",
   );
 }
 
@@ -63,7 +65,7 @@ const getCountryFromIP = async (req, res) => {
     // Fallback to default path if settings not configured
     const dbPath = path.resolve(
       __dirname,
-      "../../downloads/GeoLite2-Country.mmdb"
+      "../../downloads/GeoLite2-Country.mmdb",
     );
 
     // Check if database file exists
@@ -114,7 +116,7 @@ const getCountryFromIP = async (req, res) => {
       (c) =>
         c.iso_code === result.country.iso_code ||
         c.name.toLocaleLowerCase() ===
-        result?.country?.names?.en?.toLocaleLowerCase()
+          result?.country?.names?.en?.toLocaleLowerCase(),
     );
     // Extract country information
     const countryInfo = {
@@ -127,35 +129,35 @@ const getCountryFromIP = async (req, res) => {
       },
       continent: result.continent
         ? {
-          code: result.continent.code,
-          name: result.continent.names ? result.continent.names.en : null,
-          geoname_id: result.continent.geoname_id,
-        }
+            code: result.continent.code,
+            name: result.continent.names ? result.continent.names.en : null,
+            geoname_id: result.continent.geoname_id,
+          }
         : null,
       registered_country: result.registered_country
         ? {
-          iso_code: result.registered_country.iso_code,
-          name: result.registered_country.names
-            ? result.registered_country.names.en
-            : null,
-          geoname_id: result.registered_country.geoname_id,
-        }
+            iso_code: result.registered_country.iso_code,
+            name: result.registered_country.names
+              ? result.registered_country.names.en
+              : null,
+            geoname_id: result.registered_country.geoname_id,
+          }
         : null,
       // Add city information if available (for City databases)
       city: result.city
         ? {
-          name: result.city.names ? result.city.names.en : null,
-          geoname_id: result.city.geoname_id,
-        }
+            name: result.city.names ? result.city.names.en : null,
+            geoname_id: result.city.geoname_id,
+          }
         : null,
       // Add location information if available
       location: result.location
         ? {
-          latitude: result.location.latitude,
-          longitude: result.location.longitude,
-          time_zone: result.location.time_zone,
-          accuracy_radius: result.location.accuracy_radius,
-        }
+            latitude: result.location.latitude,
+            longitude: result.location.longitude,
+            time_zone: result.location.time_zone,
+            accuracy_radius: result.location.accuracy_radius,
+          }
         : null,
     };
 

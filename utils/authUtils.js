@@ -1,4 +1,6 @@
-const { createError } = require("../leadx-shared-models/utils/utils");
+const {
+  createError,
+} = require("../patient-management-system-shared-models/utils/utils");
 const crypto = require("crypto");
 const generateOtp = async (admin) => {
   const buffer = crypto.randomBytes(3);

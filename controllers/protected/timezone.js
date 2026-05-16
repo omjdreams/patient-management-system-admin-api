@@ -3,15 +3,15 @@ const {
   sendResponse,
   applyQueryOptions,
   checkRequired,
-} = require("../../leadx-shared-models/utils/utils");
+} = require("../../patient-management-system-shared-models/utils/utils");
 const path = require("path");
 const fs = require("fs");
 const { exec } = require("child_process");
 const util = require("util");
 const execAsync = util.promisify(exec);
 const tar = require("tar");
-const SettingModel = require("../../leadx-shared-models/models/setting");
-const Timezone = require("../../leadx-shared-models/models/timezone");
+const SettingModel = require("../../patient-management-system-shared-models/models/setting");
+const Timezone = require("../../patient-management-system-shared-models/models/timezone");
 // Initialize Timezones
 const initializeTimezonesController = async (req, res, next) => {
   try {

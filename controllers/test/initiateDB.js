@@ -2,38 +2,38 @@ const { default: mongoose } = require("mongoose");
 const {
   createError,
   sendResponse,
-} = require("../../leadx-shared-models/utils/utils");
-const AdminModel = require("../../leadx-shared-models/models/admin");
-const EmailTemplateModel = require("../../leadx-shared-models/models/emailTemplate");
-const EmailTemplateCategoryModel = require("../../leadx-shared-models/models/emailTemplateCategory");
+} = require("../../patient-management-system-shared-models/utils/utils");
+const AdminModel = require("../../patient-management-system-shared-models/models/admin");
+const EmailTemplateModel = require("../../patient-management-system-shared-models/models/emailTemplate");
+const EmailTemplateCategoryModel = require("../../patient-management-system-shared-models/models/emailTemplateCategory");
 
-const emailTemplateCategoryJson = require("../../leadx-shared-models/constants/emailTemplateCategory.json");
-const SmtpModel = require("../../leadx-shared-models/apps/smtp/models/smtp");
-const Bucket = require("../../leadx-shared-models/apps/s3-bucket/models/bucket");
-const AppModel = require("../../leadx-shared-models/models/app");
-const SettingModel = require("../../leadx-shared-models/models/setting");
-const CategoryModel = require("../../leadx-shared-models/models/category");
-const waTemplateCategoriesJson = require("../../leadx-shared-models/constants/waTemplateCategory.json");
-const featuresJson = require("../../leadx-shared-models/constants/features.json");
-const FeatureModel = require("../../leadx-shared-models/models/feature");
+const emailTemplateCategoryJson = require("../../patient-management-system-shared-models/constants/emailTemplateCategory.json");
+const SmtpModel = require("../../patient-management-system-shared-models/apps/smtp/models/smtp");
+const Bucket = require("../../patient-management-system-shared-models/apps/s3-bucket/models/bucket");
+const AppModel = require("../../patient-management-system-shared-models/models/app");
+const SettingModel = require("../../patient-management-system-shared-models/models/setting");
+const CategoryModel = require("../../patient-management-system-shared-models/models/category");
+const waTemplateCategoriesJson = require("../../patient-management-system-shared-models/constants/waTemplateCategory.json");
+const featuresJson = require("../../patient-management-system-shared-models/constants/features.json");
+const FeatureModel = require("../../patient-management-system-shared-models/models/feature");
 const { initializeTimezonesFromFile } = require("./initializeTimezones");
-const Timezone = require("../../leadx-shared-models/models/timezone");
-const WidgetModel = require("../../leadx-shared-models/models/widget");
-const DashboardPresetsModel = require("../../leadx-shared-models/models/dashboardPresets");
-const PlanModel = require("../../leadx-shared-models/models/plan");
-const responseMsgsAdminJson = require("../../leadx-shared-models/constants/responseMessagesAdmin.json");
-const responseMsgsOrgJson = require("../../leadx-shared-models/constants/responseMessages.json");
-const orgEmailTemplatesJson = require("../../leadx-shared-models/constants/orgEmailTemplates.json");
-const adminEmailTemplatesJson = require("../../leadx-shared-models/constants/adminEmailTemplates.json");
-const widgets = require("../../leadx-shared-models/constants/widgets.json");
-const ResponseMessageModel = require("../../leadx-shared-models/models/responseMessage");
-const ocr = require("../../leadx-shared-models/apps/legacy-vision-api/models/ocr");
-const Razorpay = require("../../leadx-shared-models/apps/razerpay/models/razorpay");
-const Phonepe = require("../../leadx-shared-models/apps/phonepe/models/phonepe");
-const manualPayment = require("../../leadx-shared-models/apps/manual-payment/models/manualPayment");
-const CurrencyModel = require("../../leadx-shared-models/models/currency");
+const Timezone = require("../../patient-management-system-shared-models/models/timezone");
+const WidgetModel = require("../../patient-management-system-shared-models/models/widget");
+const DashboardPresetsModel = require("../../patient-management-system-shared-models/models/dashboardPresets");
+const PlanModel = require("../../patient-management-system-shared-models/models/plan");
+const responseMsgsAdminJson = require("../../patient-management-system-shared-models/constants/responseMessagesAdmin.json");
+const responseMsgsOrgJson = require("../../patient-management-system-shared-models/constants/responseMessages.json");
+const orgEmailTemplatesJson = require("../../patient-management-system-shared-models/constants/orgEmailTemplates.json");
+const adminEmailTemplatesJson = require("../../patient-management-system-shared-models/constants/adminEmailTemplates.json");
+const widgets = require("../../patient-management-system-shared-models/constants/widgets.json");
+const ResponseMessageModel = require("../../patient-management-system-shared-models/models/responseMessage");
+const ocr = require("../../patient-management-system-shared-models/apps/legacy-vision-api/models/ocr");
+const Razorpay = require("../../patient-management-system-shared-models/apps/razerpay/models/razorpay");
+const Phonepe = require("../../patient-management-system-shared-models/apps/phonepe/models/phonepe");
+const manualPayment = require("../../patient-management-system-shared-models/apps/manual-payment/models/manualPayment");
+const CurrencyModel = require("../../patient-management-system-shared-models/models/currency");
 const { cronJobsToRun } = require("../protected/cronJob");
-const jobManager = require("../../leadx-shared-models/utils/jobManager");
+const jobManager = require("../../patient-management-system-shared-models/utils/jobManager");
 
 const initiateDB = async (req, res, next) => {
   if (process.env.NODE_ENV !== "development") {

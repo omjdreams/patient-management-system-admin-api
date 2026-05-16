@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const timezonesData = require("../../leadx-shared-models/constants/timezones.json");
+const timezonesData = require("../../patient-management-system-shared-models/constants/timezones.json");
 const { initializeTimezonesFunction } = require("../protected/timezone");
 
 /**

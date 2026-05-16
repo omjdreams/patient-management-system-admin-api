@@ -4,7 +4,7 @@ const {
   createManualPayment,
   updateManualPayment,
   deleteManualPayment,
-} = require("../../leadx-shared-models/apps/manual-payment");
+} = require("../../patient-management-system-shared-models/apps/manual-payment");
 
 const {
   applyQueryOptions,
@@ -13,13 +13,13 @@ const {
   parseFilters,
   checkRequired,
   bulkDelete,
-} = require("../../leadx-shared-models/utils/utils");
-const AppModel = require("../../leadx-shared-models/models/app");
-const ManualPaymentRequest = require("../../leadx-shared-models/apps/manual-payment/models/ManualPaymentRequest");
+} = require("../../patient-management-system-shared-models/utils/utils");
+const AppModel = require("../../patient-management-system-shared-models/models/app");
+const ManualPaymentRequest = require("../../patient-management-system-shared-models/apps/manual-payment/models/ManualPaymentRequest");
 const {
   paymentSuccessInvoiceEmail,
-} = require("../../leadx-shared-models/utils/helper");
-const Subscription = require("../../leadx-shared-models/models/subscription");
+} = require("../../patient-management-system-shared-models/utils/helper");
+const Subscription = require("../../patient-management-system-shared-models/models/subscription");
 const getAllManualPaymentHandler = async (req, res, next) => {
   try {
     const docs = await applyQueryOptions({

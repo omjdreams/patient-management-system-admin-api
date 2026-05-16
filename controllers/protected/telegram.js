@@ -5,7 +5,7 @@ const {
   applyQueryOptions,
   checkRequired,
   bulkDelete,
-} = require("../../leadx-shared-models/utils/utils");
+} = require("../../patient-management-system-shared-models/utils/utils");
 
 const {
   createTelegramApp,
@@ -16,10 +16,10 @@ const {
   saveInboundMessage,
   sendText,
   setWebhookForTelegramApp,
-} = require("../../leadx-shared-models/apps/telegram");
+} = require("../../patient-management-system-shared-models/apps/telegram");
 
-const AppModel = require("../../leadx-shared-models/models/app");
-const TelegramApp = require("../../leadx-shared-models/apps/telegram/models/telegramApp");
+const AppModel = require("../../patient-management-system-shared-models/models/app");
+const TelegramApp = require("../../patient-management-system-shared-models/apps/telegram/models/telegramApp");
 
 /* ============================================================
     CREATE TELEGRAM APP

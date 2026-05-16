@@ -1,22 +1,22 @@
 require("dotenv").config();
-const EmailTemplateModel = require("./leadx-shared-models/models/emailTemplate");
-const ResponseMessageModel = require("./leadx-shared-models/models/responseMessage");
+const EmailTemplateModel = require("./patient-management-system-shared-models/models/emailTemplate");
+const ResponseMessageModel = require("./patient-management-system-shared-models/models/responseMessage");
 
-const responseMsgsAdminJson = require("./leadx-shared-models/constants/responseMessagesAdmin.json");
-const responseMsgsOrgJson = require("./leadx-shared-models/constants/responseMessages.json");
-const orgEmailTemplatesJson = require("./leadx-shared-models/constants/orgEmailTemplates.json");
-const adminEmailTemplatesJson = require("./leadx-shared-models/constants/adminEmailTemplates.json");
+const responseMsgsAdminJson = require("./patient-management-system-shared-models/constants/responseMessagesAdmin.json");
+const responseMsgsOrgJson = require("./patient-management-system-shared-models/constants/responseMessages.json");
+const orgEmailTemplatesJson = require("./patient-management-system-shared-models/constants/orgEmailTemplates.json");
+const adminEmailTemplatesJson = require("./patient-management-system-shared-models/constants/adminEmailTemplates.json");
 
 const app = require("./app");
 const connectDB = require("./config/db");
 const { initiateEssentialData } = require("./controllers/test/initiateDB");
-const WidgetModel = require("./leadx-shared-models/models/widget");
+const WidgetModel = require("./patient-management-system-shared-models/models/widget");
 
-const widgets = require("./leadx-shared-models/constants/widgets.json");
-const FacebookOAuthApp = require("./leadx-shared-models/apps/oAuthFacebook/models/app");
+const widgets = require("./patient-management-system-shared-models/constants/widgets.json");
+const FacebookOAuthApp = require("./patient-management-system-shared-models/apps/oAuthFacebook/models/app");
 const { PORT = 3000 } = process.env;
 const { CronJob } = require("cron");
-const CronJobModel = require("./leadx-shared-models/models/cronJob");
+const CronJobModel = require("./patient-management-system-shared-models/models/cronJob");
 const { cronJobsToRun } = require("./controllers/protected/cronJob");
 
 connectDB()

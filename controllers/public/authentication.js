@@ -2,27 +2,27 @@ const {
   checkRequired,
   createError,
   sendResponse,
-} = require("../../leadx-shared-models/utils/utils");
+} = require("../../patient-management-system-shared-models/utils/utils");
 const bcrypt = require("bcryptjs");
-const AdminModel = require("../../leadx-shared-models/models/admin");
+const AdminModel = require("../../patient-management-system-shared-models/models/admin");
 const jwt = require("jsonwebtoken");
-const AdminLoginLogsModel = require("../../leadx-shared-models/models/adminLoginlogs");
-const AdminForgetPassLogsModel = require("../../leadx-shared-models/models/adminForgetPassLogs");
-const AdminEmailVerificationLogModel = require("../../leadx-shared-models/models/adminEmailVerificationLog");
+const AdminLoginLogsModel = require("../../patient-management-system-shared-models/models/adminLoginlogs");
+const AdminForgetPassLogsModel = require("../../patient-management-system-shared-models/models/adminForgetPassLogs");
+const AdminEmailVerificationLogModel = require("../../patient-management-system-shared-models/models/adminEmailVerificationLog");
 const {
   generateOtp,
   handleBlockedAdmin,
   validateOtp,
 } = require("../../utils/authUtils");
 
-const EmailTemplateCategoryModel = require("../../leadx-shared-models/models/emailTemplateCategory");
+const EmailTemplateCategoryModel = require("../../patient-management-system-shared-models/models/emailTemplateCategory");
 const {
   generateTemplateBody,
   sendMail,
   getEmailLogo,
   generateWholeMailBody,
   socialIcons,
-} = require("../../leadx-shared-models/utils/mailer");
+} = require("../../patient-management-system-shared-models/utils/mailer");
 // commented code
 const login = async (req, res, next) => {
   try {

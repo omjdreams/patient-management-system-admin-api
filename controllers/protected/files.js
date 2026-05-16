@@ -1,5 +1,7 @@
-const FileObjectModel = require("../../leadx-shared-models/models/fileObject");
-const { uploadToS3 } = require("../../leadx-shared-models/utils/s3client");
+const FileObjectModel = require("../../patient-management-system-shared-models/models/fileObject");
+const {
+  uploadToS3,
+} = require("../../patient-management-system-shared-models/utils/s3client");
 const {
   applyQueryOptions,
   sendResponse,
@@ -7,7 +9,7 @@ const {
   createError,
   checkRequired,
   bulkDelete,
-} = require("../../leadx-shared-models/utils/utils");
+} = require("../../patient-management-system-shared-models/utils/utils");
 
 const getAllFileObjects = async (req, res, next) => {
   try {

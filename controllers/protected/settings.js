@@ -1,9 +1,9 @@
-const CouponModel = require("../../leadx-shared-models/models/coupon");
-const SettingModel = require("../../leadx-shared-models/models/setting");
+const CouponModel = require("../../patient-management-system-shared-models/models/coupon");
+const SettingModel = require("../../patient-management-system-shared-models/models/setting");
 const {
   createError,
   sendResponse,
-} = require("../../leadx-shared-models/utils/utils");
+} = require("../../patient-management-system-shared-models/utils/utils");
 
 const DEFAULT_SUBSCRIPTION_POLICIES = {
   queue: {

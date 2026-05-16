@@ -5,7 +5,7 @@ const {
   applyQueryOptions,
   checkRequired,
   bulkDelete,
-} = require("../../leadx-shared-models/utils/utils");
+} = require("../../patient-management-system-shared-models/utils/utils");
 
 const {
   createRazorpay,
@@ -13,10 +13,10 @@ const {
   findAllRazorpay,
   updateRazorpay,
   deleteRazorpay,
-} = require("../../leadx-shared-models/apps/razerpay");
+} = require("../../patient-management-system-shared-models/apps/razerpay");
 
-const AppModel = require("../../leadx-shared-models/models/app");
-const Razorpay = require("../../leadx-shared-models/apps/razerpay/models/razorpay");
+const AppModel = require("../../patient-management-system-shared-models/models/app");
+const Razorpay = require("../../patient-management-system-shared-models/apps/razerpay/models/razorpay");
 
 // Create Razorpay
 const createRazorpayHandler = async (req, res, next) => {
@@ -70,7 +70,6 @@ const getRazorpayHandler = async (req, res, next) => {
 
 // Update Razorpay config
 const updateRazorpayHandler = async (req, res, next) => {
-
   try {
     const { id } = req.params;
     const { isDefault, name, clientId, clientSecret } = req.body;
@@ -90,7 +89,6 @@ const updateRazorpayHandler = async (req, res, next) => {
   } catch (err) {
     next(err);
   }
-
 };
 // Delete Razorpay config(s)
 const deleteRazorpayHandler = async (req, res, next) => {

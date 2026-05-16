@@ -1,4 +1,4 @@
-const CurrencyModel = require("../../leadx-shared-models/models/currency");
+const CurrencyModel = require("../../patient-management-system-shared-models/models/currency");
 const {
   parseFilters,
   createError,
@@ -6,7 +6,7 @@ const {
   applyQueryOptions,
   checkRequired,
   bulkDelete,
-} = require("../../leadx-shared-models/utils/utils");
+} = require("../../patient-management-system-shared-models/utils/utils");
 
 const createCurrency = async (req, res, next) => {
   try {

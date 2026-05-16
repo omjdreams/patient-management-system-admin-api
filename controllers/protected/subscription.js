@@ -1,7 +1,7 @@
-const SubscriptionModel = require("../../leadx-shared-models/models/subscription");
-const PlanModel = require("../../leadx-shared-models/models/plan");
-const CouponModel = require("../../leadx-shared-models/models/coupon");
-const FeatureModel = require("../../leadx-shared-models/models/feature");
+const SubscriptionModel = require("../../patient-management-system-shared-models/models/subscription");
+const PlanModel = require("../../patient-management-system-shared-models/models/plan");
+const CouponModel = require("../../patient-management-system-shared-models/models/coupon");
+const FeatureModel = require("../../patient-management-system-shared-models/models/feature");
 const {
   createError,
   sendResponse,
@@ -9,8 +9,8 @@ const {
   checkRequired,
   bulkDelete,
   getMemberCount,
-} = require("../../leadx-shared-models/utils/utils");
-const MemberModel = require("../../leadx-shared-models/models/member");
+} = require("../../patient-management-system-shared-models/utils/utils");
+const MemberModel = require("../../patient-management-system-shared-models/models/member");
 
 const BILLING_CYCLE_TYPES = ["Monthly", "Quarterly", "Half Yearly", "Yearly"];
 

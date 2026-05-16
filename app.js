@@ -9,7 +9,9 @@ app.use(express.json());
 
 app.use(
   "/images",
-  express.static(path.join(__dirname, "./leadx-shared-models/images")),
+  express.static(
+    path.join(__dirname, "./patient-management-system-shared-models/images"),
+  ),
 );
 app.use("/ping", (req, res) => res.send("pong"));
 app.use("/api", require("./routes"));

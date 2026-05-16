@@ -1,8 +1,8 @@
-const MemberModel = require("../../leadx-shared-models/models/member");
+const MemberModel = require("../../patient-management-system-shared-models/models/member");
 const {
   sendResponse,
   applyQueryOptions,
-} = require("../../leadx-shared-models/utils/utils");
+} = require("../../patient-management-system-shared-models/utils/utils");
 const getCompanyUsers = async (req, res, next) => {
   try {
     const docs = await applyQueryOptions({

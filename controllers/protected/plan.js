@@ -1,4 +1,4 @@
-const PlanModel = require("../../leadx-shared-models/models/plan");
+const PlanModel = require("../../patient-management-system-shared-models/models/plan");
 const {
   parseFilters,
   createError,
@@ -6,14 +6,9 @@ const {
   applyQueryOptions,
   checkRequired,
   bulkDelete,
-} = require("../../leadx-shared-models/utils/utils");
+} = require("../../patient-management-system-shared-models/utils/utils");
 
-const BILLING_CYCLE_TYPES = [
-  "Monthly",
-  "Quarterly",
-  "Half Yearly",
-  "Yearly",
-];
+const BILLING_CYCLE_TYPES = ["Monthly", "Quarterly", "Half Yearly", "Yearly"];
 
 const normalizeFeatureQuantities = (features = [], billingCycles = []) => {
   const selectedCycles = new Set(
@@ -87,10 +82,10 @@ const checkForStatusActive = async (
         !cycle?.price ||
         (cycle?.enableSalePrice
           ? !cycle?.salePrice ||
-          cycle?.salePrice > cycle?.price ||
-          (cycle?.saleDurationType == "custom"
-            ? !cycle?.saleStartDate || !cycle?.saleEndDate
-            : false)
+            cycle?.salePrice > cycle?.price ||
+            (cycle?.saleDurationType == "custom"
+              ? !cycle?.saleStartDate || !cycle?.saleEndDate
+              : false)
           : false),
     )
   ) {

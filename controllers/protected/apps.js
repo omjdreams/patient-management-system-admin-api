@@ -1,21 +1,21 @@
-const ocr = require("../../leadx-shared-models/apps/legacy-vision-api/models/ocr");
-const Phonepe = require("../../leadx-shared-models/apps/phonepe/models/phonepe");
-const Razorpay = require("../../leadx-shared-models/apps/razerpay/models/razorpay");
-const Bucket = require("../../leadx-shared-models/apps/s3-bucket/models/bucket");
-const Gemini = require("../../leadx-shared-models/apps/gemini/models/gemini");
-const AppModel = require("../../leadx-shared-models/models/app");
-const CouponModel = require("../../leadx-shared-models/models/coupon");
+const ocr = require("../../patient-management-system-shared-models/apps/legacy-vision-api/models/ocr");
+const Phonepe = require("../../patient-management-system-shared-models/apps/phonepe/models/phonepe");
+const Razorpay = require("../../patient-management-system-shared-models/apps/razerpay/models/razorpay");
+const Bucket = require("../../patient-management-system-shared-models/apps/s3-bucket/models/bucket");
+const Gemini = require("../../patient-management-system-shared-models/apps/gemini/models/gemini");
+const AppModel = require("../../patient-management-system-shared-models/models/app");
+const CouponModel = require("../../patient-management-system-shared-models/models/coupon");
 const {
   createError,
   sendResponse,
   applyQueryOptions,
-} = require("../../leadx-shared-models/utils/utils");
-const Timezone = require("../../leadx-shared-models/models/timezone");
-const InstagramApp = require("../../leadx-shared-models/apps/instagram/models/instagramApp");
-const openai = require("../../leadx-shared-models/apps/openai/models/openai");
-const ManualPayment = require("../../leadx-shared-models/apps/manual-payment/models/manualPayment");
-const FacebookOAuthApp = require("../../leadx-shared-models/apps/oAuthFacebook/models/app");
-const WhatsAppOAuthApp = require("../../leadx-shared-models/apps/oAuthWhatsApp/models/app");
+} = require("../../patient-management-system-shared-models/utils/utils");
+const Timezone = require("../../patient-management-system-shared-models/models/timezone");
+const InstagramApp = require("../../patient-management-system-shared-models/apps/instagram/models/instagramApp");
+const openai = require("../../patient-management-system-shared-models/apps/openai/models/openai");
+const ManualPayment = require("../../patient-management-system-shared-models/apps/manual-payment/models/manualPayment");
+const FacebookOAuthApp = require("../../patient-management-system-shared-models/apps/oAuthFacebook/models/app");
+const WhatsAppOAuthApp = require("../../patient-management-system-shared-models/apps/oAuthWhatsApp/models/app");
 
 // Get All Coupons
 const getAllApps = async (req, res, next) => {

@@ -1,10 +1,10 @@
-const WidgetModel = require("../../leadx-shared-models/models/widget");
+const WidgetModel = require("../../patient-management-system-shared-models/models/widget");
 const {
   sendResponse,
   applyQueryOptions,
   checkRequired,
   bulkDelete,
-} = require("../../leadx-shared-models/utils/utils");
+} = require("../../patient-management-system-shared-models/utils/utils");
 
 const createWidget = async (req, res, next) => {
   try {
@@ -200,10 +200,8 @@ const deleteWidget = async (req, res, next) => {
     });
     // Third argument is the object
     await sendResponse(res, null, { name: "WidgetDeleted_200" });
-
   } catch (err) {
     next(err);
-
   }
 };
 

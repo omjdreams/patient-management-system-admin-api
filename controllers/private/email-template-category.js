@@ -1,12 +1,12 @@
 const {
   findByIdAndUpdate,
-} = require("../../leadx-shared-models/models/emailTemplate");
-const EmailTemplateCategoryModel = require("../../leadx-shared-models/models/emailTemplateCategory");
+} = require("../../patient-management-system-shared-models/models/emailTemplate");
+const EmailTemplateCategoryModel = require("../../patient-management-system-shared-models/models/emailTemplateCategory");
 const {
   applyQueryOptions,
   sendResponse,
   createError,
-} = require("../../leadx-shared-models/utils/utils");
+} = require("../../patient-management-system-shared-models/utils/utils");
 
 const getAllEmailTemplateCategories = async (req, res, next) => {
   try {
@@ -27,7 +27,7 @@ const getAllEmailTemplateCategories = async (req, res, next) => {
               .filter(
                 (field) =>
                   EmailTemplateCategoryModel.schema.paths[field].instance ===
-                  "String"
+                  "String",
               )
               .map((field) => ({
                 [field]: { $regex: search, $options: "i" },

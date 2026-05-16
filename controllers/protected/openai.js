@@ -7,10 +7,10 @@ const {
   getAvailableOpenAIModels,
   setDefaultOpenAI,
   getDefaultOpenAI,
-} = require("../../leadx-shared-models/apps/openai");
-const openai = require("../../leadx-shared-models/apps/openai/models/openai");
+} = require("../../patient-management-system-shared-models/apps/openai");
+const openai = require("../../patient-management-system-shared-models/apps/openai/models/openai");
 
-const AppModel = require("../../leadx-shared-models/models/app");
+const AppModel = require("../../patient-management-system-shared-models/models/app");
 
 const {
   parseFilters,
@@ -19,7 +19,7 @@ const {
   applyQueryOptions,
   checkRequired,
   bulkDelete,
-} = require("../../leadx-shared-models/utils/utils");
+} = require("../../patient-management-system-shared-models/utils/utils");
 
 /**
  * Create OpenAI Configuration

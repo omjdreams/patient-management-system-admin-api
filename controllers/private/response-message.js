@@ -1,8 +1,8 @@
-const ResponseMessageModel = require("../../leadx-shared-models/models/responseMessage");
+const ResponseMessageModel = require("../../patient-management-system-shared-models/models/responseMessage");
 const {
   createError,
   sendResponse,
-} = require("../../leadx-shared-models/utils/utils");
+} = require("../../patient-management-system-shared-models/utils/utils");
 
 const createResMsg = async (req, res, next) => {
   try {

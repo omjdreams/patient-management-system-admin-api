@@ -4,16 +4,16 @@ const {
   parseFilters,
   applyQueryOptions,
   bulkDelete,
-} = require("../../leadx-shared-models/utils/utils");
+} = require("../../patient-management-system-shared-models/utils/utils");
 const {
   createS3Bucket,
   findS3BucketById,
   updateS3Bucket,
   deleteS3Bucket,
   findAllS3Bucket,
-} = require("../../leadx-shared-models/apps/s3-bucket");
-const AppModel = require("../../leadx-shared-models/models/app");
-const Bucket = require("../../leadx-shared-models/apps/s3-bucket/models/bucket");
+} = require("../../patient-management-system-shared-models/apps/s3-bucket");
+const AppModel = require("../../patient-management-system-shared-models/models/app");
+const Bucket = require("../../patient-management-system-shared-models/apps/s3-bucket/models/bucket");
 
 const createS3BucketHandler = async (req, res, next) => {
   try {

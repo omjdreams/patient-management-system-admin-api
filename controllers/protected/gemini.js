@@ -7,9 +7,9 @@ const {
   getAvailableModels,
   setDefaultGemini,
   getDefaultGemini,
-} = require("../../leadx-shared-models/apps/gemini");
-const Gemini = require("../../leadx-shared-models/apps/gemini/models/gemini");
-const AppModel = require("../../leadx-shared-models/models/app");
+} = require("../../patient-management-system-shared-models/apps/gemini");
+const Gemini = require("../../patient-management-system-shared-models/apps/gemini/models/gemini");
+const AppModel = require("../../patient-management-system-shared-models/models/app");
 const {
   parseFilters,
   createError,
@@ -17,7 +17,7 @@ const {
   applyQueryOptions,
   checkRequired,
   bulkDelete,
-} = require("../../leadx-shared-models/utils/utils");
+} = require("../../patient-management-system-shared-models/utils/utils");
 
 // Create Gemini Configuration
 const createGeminiConfig = async (req, res, next) => {

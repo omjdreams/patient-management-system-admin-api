@@ -2,26 +2,26 @@ const {
   getUserPages,
   getPageLeadForms,
   getFormLeads,
-} = require("../../leadx-shared-models/apps/facebook");
-const FormModel = require("../../leadx-shared-models/apps/facebook/models/forms");
-const PageModel = require("../../leadx-shared-models/apps/facebook/models/pages");
-const AppModel = require("../../leadx-shared-models/models/app");
-const CompanyModel = require("../../leadx-shared-models/models/company");
-const CronJobModel = require("../../leadx-shared-models/models/cronJob");
-const MemberModel = require("../../leadx-shared-models/models/member");
-const SubscriptionModel = require("../../leadx-shared-models/models/subscription");
-const adminEmailTemplates = require("../../leadx-shared-models/constants/adminEmailTemplates.json");
-const jobManager = require("../../leadx-shared-models/utils/jobManager");
+} = require("../../patient-management-system-shared-models/apps/facebook");
+const FormModel = require("../../patient-management-system-shared-models/apps/facebook/models/forms");
+const PageModel = require("../../patient-management-system-shared-models/apps/facebook/models/pages");
+const AppModel = require("../../patient-management-system-shared-models/models/app");
+const CompanyModel = require("../../patient-management-system-shared-models/models/company");
+const CronJobModel = require("../../patient-management-system-shared-models/models/cronJob");
+const MemberModel = require("../../patient-management-system-shared-models/models/member");
+const SubscriptionModel = require("../../patient-management-system-shared-models/models/subscription");
+const adminEmailTemplates = require("../../patient-management-system-shared-models/constants/adminEmailTemplates.json");
+const jobManager = require("../../patient-management-system-shared-models/utils/jobManager");
 const {
   runAdminReportNotificationCron,
-} = require("../../leadx-shared-models/utils/adminNotificationReports");
+} = require("../../patient-management-system-shared-models/utils/adminNotificationReports");
 const {
   generateTemplateBody,
   generateWholeMailBody,
   sendMail,
   socialIcons,
   getEmailLogo,
-} = require("../../leadx-shared-models/utils/mailer");
+} = require("../../patient-management-system-shared-models/utils/mailer");
 const {
   parseFilters,
   createError,
@@ -31,7 +31,7 @@ const {
   leadCreateFun,
   splitNumberCombo,
   bulkDelete,
-} = require("../../leadx-shared-models/utils/utils");
+} = require("../../patient-management-system-shared-models/utils/utils");
 
 const createCronJob = async (req, res, next) => {
   try {

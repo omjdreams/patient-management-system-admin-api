@@ -2,12 +2,12 @@ const {
   createError,
   sendResponse,
   applyQueryOptions,
-} = require("../../leadx-shared-models/utils/utils");
+} = require("../../patient-management-system-shared-models/utils/utils");
 const {
   verifyS3Credentials,
-} = require("../../leadx-shared-models/utils/s3client");
-const SettingModel = require("../../leadx-shared-models/models/setting");
-const S3BucketModel = require("../../leadx-shared-models/apps/s3-bucket/models/bucket");
+} = require("../../patient-management-system-shared-models/utils/s3client");
+const SettingModel = require("../../patient-management-system-shared-models/models/setting");
+const S3BucketModel = require("../../patient-management-system-shared-models/apps/s3-bucket/models/bucket");
 
 const createS3bucketSettings = async (req, res, next) => {
   try {

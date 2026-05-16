@@ -3,16 +3,16 @@ const {
   findAllFacebookOAuthApps,
   findFacebookOAuthAppById,
   updateFacebookOAuthApp,
-} = require("../../leadx-shared-models/apps/oAuthFacebook");
-const FacebookOAuthApp = require("../../leadx-shared-models/apps/oAuthFacebook/models/app");
-const AppModel = require("../../leadx-shared-models/models/app");
+} = require("../../patient-management-system-shared-models/apps/oAuthFacebook");
+const FacebookOAuthApp = require("../../patient-management-system-shared-models/apps/oAuthFacebook/models/app");
+const AppModel = require("../../patient-management-system-shared-models/models/app");
 
 const {
   sendResponse,
   applyQueryOptions,
   checkRequired,
   bulkDelete,
-} = require("../../leadx-shared-models/utils/utils");
+} = require("../../patient-management-system-shared-models/utils/utils");
 
 const createHttpError = (message, status = 400) => {
   const error = new Error(message);

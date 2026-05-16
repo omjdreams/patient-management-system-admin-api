@@ -3,10 +3,10 @@ const {
   getDownloadSheets,
   getDownloadRows,
   sendAdminNotificationReport,
-} = require("../../leadx-shared-models/utils/adminNotificationReports");
+} = require("../../patient-management-system-shared-models/utils/adminNotificationReports");
 const {
   sendResponse,
-} = require("../../leadx-shared-models/utils/utils");
+} = require("../../patient-management-system-shared-models/utils/utils");
 
 const getAdminNotificationReportController = async (req, res, next) => {
   try {

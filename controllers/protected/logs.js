@@ -1,13 +1,13 @@
-const LoginLogModel = require("../../leadx-shared-models/models/loginLogs");
-const serverLog = require("../../leadx-shared-models/models/serverLog");
-const specialLog = require("../../leadx-shared-models/models/specialLog");
-const AdminLoginLogsModel = require("../../leadx-shared-models/models/adminLoginlogs");
-const AdminForgetPassLogsModel = require("../../leadx-shared-models/models/adminForgetPassLogs");
-const CronJobLogModel = require("../../leadx-shared-models/models/cronJobLog");
+const LoginLogModel = require("../../patient-management-system-shared-models/models/loginLogs");
+const serverLog = require("../../patient-management-system-shared-models/models/serverLog");
+const specialLog = require("../../patient-management-system-shared-models/models/specialLog");
+const AdminLoginLogsModel = require("../../patient-management-system-shared-models/models/adminLoginlogs");
+const AdminForgetPassLogsModel = require("../../patient-management-system-shared-models/models/adminForgetPassLogs");
+const CronJobLogModel = require("../../patient-management-system-shared-models/models/cronJobLog");
 const {
   applyQueryOptions,
   sendResponse,
-} = require("../../leadx-shared-models/utils/utils");
+} = require("../../patient-management-system-shared-models/utils/utils");
 
 const getLoginLogs = async (req, res, next) => {
   try {
@@ -52,9 +52,7 @@ const getLogs = async (req, res, next) => {
       additionalFilters: { defaults: { sortBy: "updatedAt" } },
     });
     await sendResponse(res, null, null, docs);
-  }
-  catch (error) {
-
+  } catch (error) {
     next(error);
   }
 };
@@ -103,7 +101,6 @@ const getAdminLoginLogs = async (req, res, next) => {
 
 const getAdminActivityLogs = async (req, res, next) => {
   try {
-
     const docs = await applyQueryOptions({
       data: serverLog,
       query: req.query,

@@ -1,9 +1,9 @@
-const EmailTemplateModel = require("../../leadx-shared-models/models/emailTemplate");
+const EmailTemplateModel = require("../../patient-management-system-shared-models/models/emailTemplate");
 const {
   createError,
   sendResponse,
   applyQueryOptions,
-} = require("../../leadx-shared-models/utils/utils");
+} = require("../../patient-management-system-shared-models/utils/utils");
 
 const createEmailTemplate = async (req, res, next) => {
   try {
@@ -50,17 +50,17 @@ const getEmailTemplates = async (req, res, next) => {
     const parsedFilters = filter ? JSON.parse(filter) : {};
     const searchFilter = search
       ? {
-        $or: [
-          ...Object.keys(EmailTemplateModel.schema.paths)
-            .filter(
-              (field) =>
-                EmailTemplateModel.schema.paths[field].instance === "String"
-            )
-            .map((field) => ({
-              [field]: { $regex: search, $options: "i" },
-            })),
-        ],
-      }
+          $or: [
+            ...Object.keys(EmailTemplateModel.schema.paths)
+              .filter(
+                (field) =>
+                  EmailTemplateModel.schema.paths[field].instance === "String",
+              )
+              .map((field) => ({
+                [field]: { $regex: search, $options: "i" },
+              })),
+          ],
+        }
       : {};
 
     const sortOrder = order === "asc" ? 1 : -1;

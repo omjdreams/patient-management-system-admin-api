@@ -5,17 +5,17 @@ const {
   applyQueryOptions,
   checkRequired,
   bulkDelete,
-} = require("../../leadx-shared-models/utils/utils");
+} = require("../../patient-management-system-shared-models/utils/utils");
 
-const AppModel = require("../../leadx-shared-models/models/app");
+const AppModel = require("../../patient-management-system-shared-models/models/app");
 const {
   createPhonepe,
   findAllPhonepe,
   findPhonepeById,
   deletePhonepe,
   updatePhonepe,
-} = require("../../leadx-shared-models/apps/phonepe");
-const Phonepe = require("../../leadx-shared-models/apps/phonepe/models/phonepe");
+} = require("../../patient-management-system-shared-models/apps/phonepe");
+const Phonepe = require("../../patient-management-system-shared-models/apps/phonepe/models/phonepe");
 
 // Create Phonepe
 const createPhonepeHandler = async (req, res, next) => {
@@ -62,15 +62,9 @@ const getPhonepeHandler = async (req, res, next) => {
     if (!doc) await createError({ name: "PhonepeNotFound_404" });
 
     await sendResponse(res, doc, { name: "PhonepeFetchd_201" });
-
-  }
-
-  catch (err) {
-
+  } catch (err) {
     next(err);
-
   }
-
 };
 
 // Update Phonepe config
@@ -122,7 +116,6 @@ const deletePhonepeHandler = async (req, res, next) => {
     next(err);
   }
 };
-
 
 module.exports = {
   createPhonepeHandler,

@@ -1,8 +1,8 @@
-const AdminModel = require("../../leadx-shared-models/models/admin");
+const AdminModel = require("../../patient-management-system-shared-models/models/admin");
 const {
   sendResponse,
   createError,
-} = require("../../leadx-shared-models/utils/utils");
+} = require("../../patient-management-system-shared-models/utils/utils");
 
 const getAdminProfile = async (req, res, next) => {
   try {
@@ -21,7 +21,7 @@ const updateAdminProfile = async (req, res, next) => {
     const updateAdminProfile = await AdminModel.findByIdAndUpdate(
       req.admin._id,
       { name, phone, isTwoFactorAuth, preferences },
-      { new: true }
+      { new: true },
     );
 
     if (!updateAdminProfile) await createError({ key: "049" });

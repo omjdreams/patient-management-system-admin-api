@@ -2,10 +2,10 @@ const crypto = require("crypto");
 const {
   checkRequired,
   sendResponse,
-} = require("../../leadx-shared-models/utils/utils");
-const CompanyModel = require("../../leadx-shared-models/models/company");
-const MemberModel = require("../../leadx-shared-models/models/member");
-const UserModel = require("../../leadx-shared-models/models/user");
+} = require("../../patient-management-system-shared-models/utils/utils");
+const CompanyModel = require("../../patient-management-system-shared-models/models/company");
+const MemberModel = require("../../patient-management-system-shared-models/models/member");
+const UserModel = require("../../patient-management-system-shared-models/models/user");
 
 const MAGIC_LOGIN_TTL_MS = 10 * 60 * 1000;
 

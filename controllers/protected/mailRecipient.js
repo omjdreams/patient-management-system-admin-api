@@ -1,11 +1,11 @@
-const MailRecipientModel = require("../../leadx-shared-models/models/mailRecipient");
+const MailRecipientModel = require("../../patient-management-system-shared-models/models/mailRecipient");
 const {
   checkRequired,
   createError,
   sendResponse,
   applyQueryOptions,
   parseFilters,
-} = require("../../leadx-shared-models/utils/utils");
+} = require("../../patient-management-system-shared-models/utils/utils");
 
 const createMailRecipient = async (req, res, next) => {
   try {

@@ -5,10 +5,10 @@ const {
   findAllOcr,
   createOcr,
   doOCR,
-} = require("../../leadx-shared-models/apps/legacy-vision-api");
-const ocr = require("../../leadx-shared-models/apps/legacy-vision-api/models/ocr");
-const AppModel = require("../../leadx-shared-models/models/app");
-const FileObjectModel = require("../../leadx-shared-models/models/fileObject");
+} = require("../../patient-management-system-shared-models/apps/legacy-vision-api");
+const ocr = require("../../patient-management-system-shared-models/apps/legacy-vision-api/models/ocr");
+const AppModel = require("../../patient-management-system-shared-models/models/app");
+const FileObjectModel = require("../../patient-management-system-shared-models/models/fileObject");
 const {
   applyQueryOptions,
   sendResponse,
@@ -17,7 +17,7 @@ const {
   parseFilters,
   leadCreateFun,
   bulkDelete,
-} = require("../../leadx-shared-models/utils/utils");
+} = require("../../patient-management-system-shared-models/utils/utils");
 const getAllOcrHandler = async (req, res, next) => {
   try {
     const docs = await applyQueryOptions({

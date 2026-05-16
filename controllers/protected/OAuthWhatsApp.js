@@ -3,15 +3,15 @@ const {
   findAllWhatsAppOAuthApps,
   findWhatsAppOAuthAppById,
   updateWhatsAppOAuthApp,
-} = require("../../leadx-shared-models/apps/oAuthWhatsApp");
-const WhatsAppOAuthApp = require("../../leadx-shared-models/apps/oAuthWhatsApp/models/app");
-const AppModel = require("../../leadx-shared-models/models/app");
+} = require("../../patient-management-system-shared-models/apps/oAuthWhatsApp");
+const WhatsAppOAuthApp = require("../../patient-management-system-shared-models/apps/oAuthWhatsApp/models/app");
+const AppModel = require("../../patient-management-system-shared-models/models/app");
 const {
   sendResponse,
   applyQueryOptions,
   checkRequired,
   bulkDelete,
-} = require("../../leadx-shared-models/utils/utils");
+} = require("../../patient-management-system-shared-models/utils/utils");
 
 const createHttpError = (message, status = 400) => {
   const error = new Error(message);
@@ -118,7 +118,8 @@ const updateOAuthWhatsApp = async (req, res, next) => {
     if (systemUserAccessToken !== undefined) {
       payload.systemUserAccessToken = `${systemUserAccessToken}`.trim();
     }
-    if (systemUserId !== undefined) payload.systemUserId = `${systemUserId}`.trim();
+    if (systemUserId !== undefined)
+      payload.systemUserId = `${systemUserId}`.trim();
     if (businessId !== undefined) payload.businessId = `${businessId}`.trim();
     if (webhookFields !== undefined) {
       payload.webhookFields = `${webhookFields}`.trim();
